@@ -1,0 +1,11 @@
+﻿@model Passport.Web.Models.LoginSccessVM
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<script>
+    setTimeout(function () {
+        top.location.href = "http://www.client.com/Pass?Token=@Model.Token";
+    }, 1000);
+</script>
