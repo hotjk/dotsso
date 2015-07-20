@@ -8,5 +8,6 @@ namespace Client.Web.Models
     public class PassVM
     {
         public string Token { get; set; }
+        public string ReturnURL { get; set; }
     }
 }

@@ -1,3 +1,10 @@
-﻿@{
+﻿@model Client.Web.Models.PassVM
+@{
     ViewBag.Title = "Home Page";
 }
+
+<script>
+    setTimeout(function () {
+        window.location.href = "@Model.ReturnURL";
+    }, 1000);
+</script>

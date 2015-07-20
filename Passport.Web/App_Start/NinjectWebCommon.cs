@@ -11,6 +11,7 @@ namespace Passport.Web.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Passport.Model;
+    using Grit.Utility.Authentication;
 
     public static class NinjectWebCommon 
     {
@@ -62,6 +63,9 @@ namespace Passport.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<ICookieTicketConfig>().ToConstant(CookieTicketConfig.Default());
+            kernel.Bind<IAuthenticator>().To<Authenticator>().InSingletonScope();
+
             kernel.Bind<IPassportClientService>().To<PassportClientService>();
         }        
     }

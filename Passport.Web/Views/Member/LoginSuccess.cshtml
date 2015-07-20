@@ -1,11 +1,12 @@
-﻿@model Passport.Web.Models.LoginSccessVM
+﻿@model Passport.Web.Models.LoginSuccessVM
 @{
-    ViewBag.Title = "Login";
+    Layout = null;
+    ViewBag.Title = "Login Success";
 }
 
-<h2>Login</h2>
+<h2>Waiting...</h2>
 <script>
     setTimeout(function () {
-        top.location.href = "http://www.client.com/Pass?Token=@Model.Token";
+        top.location.href = "http://www.client.com/Pass?Token=@HttpUtility.UrlEncode(Model.Token)&ReturnUrl=@HttpUtility.UrlEncode(Model.ReturnURL)";
     }, 1000);
 </script>
